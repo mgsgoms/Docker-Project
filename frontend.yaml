@@ -16,5 +16,5 @@ spec:
       app: frontend
    spec:
     containers:
-    - image: localhost:5000/mgsgoms/flask:${BUILD_NUMBER}
+    - image: 192.168.99.104:5000/mgsgoms/flask:${BUILD_NUMBER}
       name: frontend
