@@ -1,0 +1,24 @@
+<head>
+<style>
+table, th, td {
+   border: 1px solid black;
+   border-collapse: collapse;
+}
+th, td {
+   padding: 15px;
+}
+</style>
+</head>
+
+<table style="width:50%">
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+    </tr>
+        {% for row in value %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+        {% endfor %}
+</table>
