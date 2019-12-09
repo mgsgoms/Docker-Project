@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/mgsgoms/Docker-Projects.git'
+        git 'https://github.com/mgsgoms/Docker-Project.git'
       }
     }
 
