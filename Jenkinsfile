@@ -36,6 +36,13 @@ pipeline {
 
     stage('current directory') {
       steps{
+        dir("${env.WORKSPACE}/mysql"){
+          sh "pwd"
+          }
+      }
+   }
+   stage('Build mysql image') {
+     steps{
         sh 'docker build -t "172.31.1.107:5000/mgsgoms/mysql:$BUILD_NUMBER" /home/jenkins/agent/workspace/Docker-Project_master/mysql/'
         sh 'docker push "172.31.1.107:5000/mgsgoms/mysql:$BUILD_NUMBER"'
         }
