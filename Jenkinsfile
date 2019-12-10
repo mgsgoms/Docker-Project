@@ -36,7 +36,7 @@ pipeline {
 
     stage('current directory') {
       steps{
-        sh 'docker build -t "172.31.1.107:5000/mgsgoms/mysql:$BUILD_NUMBER" /home/jenkins/agent/workspace/Docker-Projects_master/mysql/'
+        sh 'docker build -t "172.31.1.107:5000/mgsgoms/mysql:$BUILD_NUMBER" /home/jenkins/agent/workspace/Docker-Project_master/mysql/'
         sh 'docker push "172.31.1.107:5000/mgsgoms/mysql:$BUILD_NUMBER"'
         }
       }
