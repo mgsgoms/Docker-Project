@@ -34,7 +34,7 @@ pipeline {
       }
     }
 
-    stage('current directory') {
+    stage('current') {
       steps{
         dir("${env.WORKSPACE}/mysql"){
           sh "pwd"
