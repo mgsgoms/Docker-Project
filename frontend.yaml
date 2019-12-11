@@ -49,7 +49,7 @@ spec:
           run: backend
      spec:
         containers:
-        - image: 172.31.1.107:5000/mgsgoms/mysql:${BUILD_NUMBER}
+        - image: 172.31.1.107:5000/mgsgoms/mysql:4
           imagePullPolicy: IfNotPresent
           args: ["--default-authentication-plugin=mysql_native_password"]
           name: backend
