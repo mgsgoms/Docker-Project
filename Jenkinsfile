@@ -43,7 +43,7 @@ pipeline {
    stage('Build mysql image') {
      steps{
        sh 'docker build -t "10.128.0.8:5000/mgsgoms/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
-        sh 'docker push "10.128.0.85000/mgsgoms/mysql:$BUILD_NUMBER"'
+        sh 'docker push "10.128.0.8:5000/mgsgoms/mysql:$BUILD_NUMBER"'
         }
       }
     stage('Deploy App') {
