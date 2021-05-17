@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.9.5
 RUN pip install flask
 RUN pip install MySQL
 RUN pip install requests
