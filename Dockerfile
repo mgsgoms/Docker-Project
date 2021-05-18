@@ -1,4 +1,5 @@
 FROM python:3.7
+RUN apt install python
 RUN pip install flask
 RUN apt-get install libmysqlclient-dev python3-dev
 RUN pip3 install mysqlclient mysql mysql-connector-python
