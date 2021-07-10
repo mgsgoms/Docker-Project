@@ -16,7 +16,7 @@ spec:
       app: frontend
    spec:
     containers:
-    - image: 10.128.0.2:5000/mgsgoms/flask:${BUILD_NUMBER}
+    - image: 10.128.0.4:5000/mgsgoms/flask:${BUILD_NUMBER}
       name: frontend
 
 ---
@@ -49,7 +49,7 @@ spec:
           run: backend
      spec:
         containers:
-        - image: 10.128.0.2:5000/mgsgoms/mysql:${BUILD_NUMBER}
+        - image: 10.128.0.4:5000/mgsgoms/mysql:${BUILD_NUMBER}
           imagePullPolicy: IfNotPresent
           args: ["--default-authentication-plugin=mysql_native_password"]
           name: backend
