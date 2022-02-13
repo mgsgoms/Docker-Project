@@ -1,4 +1,3 @@
-#cicdpipeline
 pipeline {
 
   environment {
