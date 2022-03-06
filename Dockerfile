@@ -8,3 +8,4 @@ COPY flask/ /flask
 EXPOSE 8080
 WORKDIR /flask
 CMD [ "python", "./app_script.py" ]
+#test
