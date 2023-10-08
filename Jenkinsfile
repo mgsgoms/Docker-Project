@@ -18,7 +18,7 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          dockerImage = dockerfile
+          dockerImage = dockerfile + ":$11"
         }
       }
     }
