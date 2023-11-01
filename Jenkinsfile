@@ -26,7 +26,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry( "" ) {
+          withdockerRegistry( [ credentialsId: "dockerhub2", url: "" ] ) {
             dockerImage.push()
           }
         }
