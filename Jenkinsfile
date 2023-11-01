@@ -42,11 +42,22 @@ pipeline {
    }
    stage('Build mysql image') {
      steps{
-       sh 'docker build -t "10.138.0.3:5001/mgsgoms/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
-        sh 'docker push "10.138.0.3:5001/mgsgoms/mysql:$BUILD_NUMBER"'
+       withDockerRegistry([ credentialsId: "dockerhub2", url: "" ]) {
+       sh 'docker build -t "muthubharathi740/mysql:$BUILD_NUMBER"  "$WORKSPACE"/mysql'
+        sh 'docker push "muthubharathi740/mysql:$BUILD_NUMBER"'
+        }
+      } 
+   }
+    stage('Push mysql Image') {
+      steps{
+        script {
+          withdockerRegistry( [ credentialsId: "dockerhub2", url: "" ] ) {
+            dockerImage.push("registry_mysql")
+          }
         }
       }
-    stage('Deploy App') {
+    }
+      stage('Deploy App') {
       steps {
         script {
           kubernetesDeploy(configs: "frontend.yaml", kubeconfigId: "kube")
