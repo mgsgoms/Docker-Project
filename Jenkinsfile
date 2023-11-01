@@ -53,7 +53,7 @@ pipeline {
     stage('Push mysql Image') {
       steps{
         script {
-          withdockerRegistry( [ credentialsId: "dockerhub2", url: "" ] ) {
+          withdockerRegistry ([ credentialsId: "dockerhub2", url: "" ] ) {
             dockerImage.push("registry_mysql")
           }
         }
